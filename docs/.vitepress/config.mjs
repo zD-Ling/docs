@@ -4,8 +4,8 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "长岛冰茶的技术文档",
   description: "A VitePress Site",
-  base: "/docs/",
-  head: [["link", { rel: "icon", href: "/docs/logo.svg" }]],
+  // base: "/docs/",
+  head: [["link", { rel: "icon", href: "/logo.svg" }]],
   themeConfig: {
     logo: "logo.svg",
     // https://vitepress.dev/reference/default-theme-config
@@ -48,6 +48,6 @@ export default defineConfig({
     footer: {
       copyright: "Copyright@ 2025 Long Island iced tea",
     },
-    head: [["link", { rel: "icon", href: "/docs/logo.svg" }]],
+    head: [["link", { rel: "icon", href: "/logo.svg" }]],
   },
 });
