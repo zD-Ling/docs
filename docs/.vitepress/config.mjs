@@ -11,13 +11,19 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "首页", link: "/" },
-      { text: "测试文档", link: "/test" },
+      { text: "docker", 
+        items:[
+          {text: '安装', link: '/docker/安装.md'}
+        ]
+       },
     ],
 
     sidebar: [
       {
         text: "目录",
-        items: [{ text: "测试文档", link: "/test" }],
+        items: [{ text: "docker", items:[
+          {text: '安装', link: '/docker/安装.md'}
+        ] }],
       },
     ],
     search: {
