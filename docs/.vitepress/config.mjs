@@ -3,17 +3,22 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "长岛冰茶的技术文档",
-  description: "A VitePress Site",
+  description: "长岛冰茶的技术文档",
   // base: "/docs/",
   head: [["link", { rel: "icon", href: "/logo.svg" }]],
   themeConfig: {
     logo: "logo.svg",
     // https://vitepress.dev/reference/default-theme-config
+    outlineTitle:'页面导航',
+    returnToTopLabel:'返回顶部',
+    sidebarMenuLabel:'菜单',
+    darkModeSwitchLabel:'切换主题',
     nav: [
       { text: "首页", link: "/" },
       { text: "docker", 
         items:[
-          {text: '安装', link: '/docker/安装.md'}
+          {text: '安装', link: '/docker/安装.md'},
+          {text:'软件部署', link:'/docker/软件部署.md'}
         ]
        },
     ],
@@ -22,7 +27,8 @@ export default defineConfig({
       {
         text: "目录",
         items: [{ text: "docker", items:[
-          {text: '安装', link: '/docker/安装.md'}
+          {text: '安装', link: '/docker/安装.md'},
+          {text:'软件部署', link:'/docker/软件部署.md'}
         ] }],
       },
     ],
