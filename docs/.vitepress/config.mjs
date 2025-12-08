@@ -9,27 +9,34 @@ export default defineConfig({
   themeConfig: {
     logo: "logo.svg",
     // https://vitepress.dev/reference/default-theme-config
-    outlineTitle:'页面导航',
-    returnToTopLabel:'返回顶部',
-    sidebarMenuLabel:'菜单',
-    darkModeSwitchLabel:'切换主题',
+    outlineTitle: "页面导航",
+    returnToTopLabel: "返回顶部",
+    sidebarMenuLabel: "菜单",
+    darkModeSwitchLabel: "切换主题",
+    darkModeSwitchTitle: "切换主题",
     nav: [
       { text: "首页", link: "/" },
-      { text: "docker", 
-        items:[
-          {text: '安装', link: '/docker/安装.md'},
-          {text:'软件部署', link:'/docker/软件部署.md'}
-        ]
-       },
+      {
+        text: "docker",
+        items: [
+          { text: "安装", link: "/docker/安装.md" },
+          { text: "软件部署", link: "/docker/软件部署.md" },
+        ],
+      },
     ],
 
     sidebar: [
       {
         text: "目录",
-        items: [{ text: "docker", items:[
-          {text: '安装', link: '/docker/安装.md'},
-          {text:'软件部署', link:'/docker/软件部署.md'}
-        ] }],
+        items: [
+          {
+            text: "docker",
+            items: [
+              { text: "安装", link: "/docker/安装.md" },
+              { text: "软件部署", link: "/docker/软件部署.md" },
+            ],
+          },
+        ],
       },
     ],
     search: {
