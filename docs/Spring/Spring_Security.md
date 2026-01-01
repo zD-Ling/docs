@@ -270,17 +270,17 @@ AuthenticationManager 用来实现 Spring Security 的认证功能。它是一�
 
 ProviderManager 是 AuthenticationManager 最常用的实现。ProviderManager 将委派给 AuthenticationProvider 实例列表。每个 AuthenticationProvider 都有机会指示身份验证应该成功、失败，或者指示它不能做出决定，并允许下游 AuthenticationProvider 做出决定。如果配置的 AuthenticationProvider 实例都不能进行身份验证，则身份验证将失败，并出现 ProviderNotFoundException，这是一种特殊的 AuthenticationException，表示 ProviderManager 未配置为支持传递到它的身份验证类型。
 
-![ProviderManager](../public/assets/images/Spring_Security/ProviderManager.jpg)
+![ProviderManager](/assets/images/Spring_Security/ProviderManager.jpg)
 
 在实践中，每个 AuthenticationProvider 都知道如何执行特定类型的身份验证。例如，一个 AuthenticationProvider 可能能够验证用户名/密码，而另一个可能能够验证 SAML 断言。这允许每个 AuthenticationProvider 执行一种非常特定的身份验证类型，同时支持多种类型的身份验证，并且只公开一个 AuthenticationManager bean。
 
 ProviderManager 还允许配置可选的父 AuthenticationManager，在没有 AuthenticationProvider 可以执行身份验证的情况下，会咨询该父 AuthenticationManager。父级可以是任何类型的 AuthenticationManager，但它通常是 ProviderManager 的实例。
 
-![ProviderManagerParent](../public/assets/images/Spring_Security/ProviderManagerParent.jpg)
+![ProviderManagerParent](/assets/images/Spring_Security/ProviderManagerParent.jpg)
 
 事实上，多个 ProviderManager 实例可能共享同一个父 AuthenticationManager。在存在多个 SecurityFilterChain 实例的情况下，这种情况有些常见，这些实例有一些共同的身份验证（共享的父 AuthenticationManager），但也有不同的身份验证机制（不同的 ProviderManager 实例）。
 
-![ProviderManagerMoreParent](../public/assets/images/Spring_Security/ProviderManagerMoreParent.jpg)
+![ProviderManagerMoreParent](/assets/images/Spring_Security/ProviderManagerMoreParent.jpg)
 
 默认情况下，ProviderManager 会尝试从成功的身份验证请求返回的身份验证对象中清除任何敏感凭据信息。这可以防止诸如密码之类的信息在 HttpSession 中保留的时间超过所需的时间。
 
@@ -304,7 +304,7 @@ AbstractAuthenticationProcessingFilter 用作对用户凭据进行身份验证�
 
 接下来，AbstractAuthenticationProcessingFilter 可以对提交给它的任何身份验证请求进行身份验证。
 
-![AbstractAuthenticationProcessingFilter](../public/assets/images/Spring_Security/AbstractAuthenticationProcessingFilter.jpg)
+![AbstractAuthenticationProcessingFilter](/assets/images/Spring_Security/AbstractAuthenticationProcessingFilter.jpg)
 
 1. 当用户提交凭据时，AbstractAuthenticationProcessingFilter 会从要进行身份验证的 HttpServlet 请求创建一个身份验证。创建的身份验证类型取决于 AbstractAuthenticationProcessingFilter 的子类。例如，UsernamePasswordAuthenticationFilter 根据 HttpServlet 请求中提交的用户名和密码创建 UsernamePasswordAuthenticationToken。
 2. 接下来，身份验证被传递到要进行身份验证的 AuthenticationManager 中。
@@ -335,7 +335,7 @@ http.authorizeHttpRequests((authorize) -> authorize.anyRequest().authenticated()
 
 ### 授权组件工作原理
 
-![HowAuthorizationWorks](../public/assets/images/Spring_Security/HowAuthorizationWorks.jpg)
+![HowAuthorizationWorks](/assets/images/Spring_Security/HowAuthorizationWorks.jpg)
 
 1. 首先，从 SecurityContextHolder 获取 Authentication。
 2. 其次，它将 Authentication 和 HttpServlet 请求传递给 AuthorizationManager。AuthorizationManager 将请求与 authorizeHttpRequests 中的配置进行匹配，并运行相应的规则。
@@ -558,7 +558,7 @@ public class MyCustomerService {
 
 当方法安全性被激活时，对 MyCustomerService#readCustomer 的给定调用可能如下所示：
 
-![MyCustomerService#readCustomer](../public/assets/images/Spring_Security/HowAuthorizationWorks.jpg)
+![MyCustomerService#readCustomer](/assets/images/Spring_Security/HowAuthorizationWorks.jpg)
 
 1. Spring AOP 为 readCustomer 调用其代理方法。在代理的其他顾问中，它调用与@PreAuthorize 切入点匹配的 AuthorizationManagerBeforeMethodInterceptor。
 2. 拦截器调用 PreAuthorizationAuthorizationManager.check 方法。
@@ -744,9 +744,9 @@ public class JwtUtil {
 
 ### 数据库表实现 RBAC 模型
 
-![RBAC](../public/assets/images/Spring_Security/RBAC.png)
+![RBAC](/assets/images/Spring_Security/RBAC.png)
 
-![RBAC_Class](../public/assets/images/Spring_Security/RBAC_Class.png)
+![RBAC_Class](/assets/images/Spring_Security/RBAC_class.png)
 
 ### MySQL 表
 
