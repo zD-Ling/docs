@@ -335,7 +335,7 @@ http.authorizeHttpRequests((authorize) -> authorize.anyRequest().authenticated()
 
 ### 授权组件工作原理
 
-![HowAuthorizationWorks](D:/Development/Projects/docs/docs/asserts/images/Spring_Security/HowAuthorizationWorks.jpg)
+![HowAuthorizationWorks](../asserts/images/Spring_Security/HowAuthorizationWorks.jpg)
 
 1. 首先，从 SecurityContextHolder 获取 Authentication。
 2. 其次，它将 Authentication 和 HttpServlet 请求传递给 AuthorizationManager。AuthorizationManager 将请求与 authorizeHttpRequests 中的配置进行匹配，并运行相应的规则。
@@ -558,7 +558,7 @@ public class MyCustomerService {
 
 当方法安全性被激活时，对 MyCustomerService#readCustomer 的给定调用可能如下所示：
 
-![MyCustomerService#readCustomer](D:/Development/Projects/docs/docs/asserts/images/Spring_Security/HowAuthorizationWorks.jpg)
+![MyCustomerService#readCustomer](../asserts/images/Spring_Security/HowAuthorizationWorks.jpg)
 
 1. Spring AOP 为 readCustomer 调用其代理方法。在代理的其他顾问中，它调用与@PreAuthorize 切入点匹配的 AuthorizationManagerBeforeMethodInterceptor。
 2. 拦截器调用 PreAuthorizationAuthorizationManager.check 方法。
@@ -744,47 +744,47 @@ public class JwtUtil {
 
 ### 数据库表实现 RBAC 模型
 
-![RBAC](D:/Development/Projects/docs/docs/asserts/images/Spring_Security/RBAC.png)
+![RBAC](../asserts/images/Spring_Security/RBAC.png)
 
-![RBAC_Class](D:/Development/Projects/docs/docs/asserts/images/Spring_Security/RBAC_Class.png)
+![RBAC_Class](../asserts/images/Spring_Security/RBAC_Class.png)
 
-### MySQL表
+### MySQL 表
 
 #### menu
 
-| id   | menu_name    | parent_id | type | component | perms     |
-| ---- | ------------ | --------- | ---- | --------- | --------- |
-| 1    | 用户管理新增 | 0         | 2    | null      | user:add  |
-| 2    | 用户管理查询 | 0         | 2    | null      | user:list |
+| id  | menu_name    | parent_id | type | component | perms     |
+| --- | ------------ | --------- | ---- | --------- | --------- |
+| 1   | 用户管理新增 | 0         | 2    | null      | user:add  |
+| 2   | 用户管理查询 | 0         | 2    | null      | user:list |
 
 #### role
 
-| id   | role_name |
-| ---- | --------- |
-| 1    | 管理员    |
-| 2    | 用户      |
+| id  | role_name |
+| --- | --------- |
+| 1   | 管理员    |
+| 2   | 用户      |
 
 #### user
 
-| id   | username | password                              | avatar | create_time | update_time |
-| ---- | -------- | ------------------------------------- | ------ | ----------- | ----------- |
-| 1    | admin    | 123456(BCryptPasswordEncoder加密得出) | null   | null        | null        |
-| 2    | user     | 123456(BCryptPasswordEncoder加密得出) | null   | null        | null        |
+| id  | username | password                               | avatar | create_time | update_time |
+| --- | -------- | -------------------------------------- | ------ | ----------- | ----------- |
+| 1   | admin    | 123456(BCryptPasswordEncoder 加密得出) | null   | null        | null        |
+| 2   | user     | 123456(BCryptPasswordEncoder 加密得出) | null   | null        | null        |
 
 #### role_menu
 
-| id   | role_id | menu_id |
-| ---- | ------- | ------- |
-| 1    | 1       | 1       |
-| 2    | 1       | 2       |
-| 3    | 2       | 2       |
+| id  | role_id | menu_id |
+| --- | ------- | ------- |
+| 1   | 1       | 1       |
+| 2   | 1       | 2       |
+| 3   | 2       | 2       |
 
 #### user_role
 
-| id   | user_id | role_id |
-| ---- | ------- | ------- |
-| 1    | 1       | 1       |
-| 2    | 2       | 2       |
+| id  | user_id | role_id |
+| --- | ------- | ------- |
+| 1   | 1       | 1       |
+| 2   | 2       | 2       |
 
 ### User 实体对象
 
