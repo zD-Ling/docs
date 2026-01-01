@@ -97,7 +97,7 @@ export default defineConfig({
     // ],
 
     footer: {
-      copyright: 'Copyright@ 2025 Long Island iced tea'
+      copyright: 'Copyright@ 2025 - 2026 Long Island iced tea'
     },
     head: [['link', { rel: 'icon', href: '/logo.svg' }]],
   },

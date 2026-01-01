@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "长岛冰茶的技术文档"
-  text: "持续学习 无限进步"
-  tagline: 在互联网上留下足迹代表从事过该行业
+  name: '长岛冰茶的技术文档'
+  text: '持续学习 无限进步'
+  tagline: '记录成长，分享价值'
   image:
     src: /logo.svg
     alt: 背景图
