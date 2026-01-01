@@ -1199,4 +1199,27 @@ public class SecurityConfig {
 }
 ```
 
-###
+### 测试方法
+
+``` java
+@RestController
+@RequestMapping("/test")
+public class TestController {
+
+    @PreAuthorize("hasAnyAuthority('user:add')")
+    @GetMapping("/add")
+    public Result<Object> add() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println("Current user authorities: " + auth.getAuthorities());
+        return Result.success("user:add");
+    }
+
+    @PreAuthorize("hasAnyAuthority('user:list')")
+    @GetMapping("/list")
+    public Result<Object> list() {
+        return Result.success("user:list");
+    }
+
+}
+```
+
