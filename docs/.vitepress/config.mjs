@@ -5,7 +5,28 @@ export default defineConfig({
   title: '长岛冰茶的技术文档',
   description: '长岛冰茶的技术文档',
   // base: "/docs/",
-  head: [['link', { rel: 'icon', href: '/logo.svg' }]],
+  head: [
+    [
+      'link',
+      {
+        rel: 'icon',
+        href: '/logo.svg'
+      }
+    ],
+    [
+      'script',
+      {},
+      `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c6e7bb490d40ae8a96902955d50d5e5f";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      `
+    ]
+  ],
   themeConfig: {
     logo: 'logo.svg',
     // https://vitepress.dev/reference/default-theme-config
@@ -99,6 +120,6 @@ export default defineConfig({
     footer: {
       copyright: 'Copyright@ 2025 - 2026 Long Island iced tea'
     },
-    head: [['link', { rel: 'icon', href: '/logo.svg' }]],
-  },
+    head: [['link', { rel: 'icon', href: '/logo.svg' }]]
+  }
 })
