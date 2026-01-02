@@ -14,17 +14,17 @@ export default defineConfig({
       }
     ],
     [
-      ('script',
+      'script',
       {},
       `
       var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
         hm.src = "https://hm.baidu.com/hm.js?c6e7bb490d40ae8a96902955d50d5e5f";
-        var s = document.getElementsByTagName("script")[0];
+        var s = document.getElementsByTagName("script")[0]; 
         s.parentNode.insertBefore(hm, s);
       })();
-      `)
+      `
     ]
   ],
   themeConfig: {
