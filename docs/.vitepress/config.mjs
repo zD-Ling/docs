@@ -14,17 +14,17 @@ export default defineConfig({
       }
     ],
     [
-      'script',
+      ('script',
       {},
       `
       var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
         hm.src = "https://hm.baidu.com/hm.js?c6e7bb490d40ae8a96902955d50d5e5f";
-        var s = document.getElementsByTagName("script")[0]; 
+        var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
       })();
-      `
+      `)
     ]
   ],
   themeConfig: {
@@ -37,7 +37,19 @@ export default defineConfig({
     darkModeSwitchTitle: '切换主题',
     outline: [2, 3, 4, 5, 6],
     nav: [
-      { text: '首页', link: '/' },
+      {
+        text: '首页',
+        link: '/'
+      },
+      {
+        text: '前端',
+        items: [
+          {
+            text: '开发技巧',
+            link: '/frontend/tips/发布订阅-不一样的设计模式.md'
+          }
+        ]
+      },
       {
         text: 'Spring',
         items: [
@@ -57,6 +69,16 @@ export default defineConfig({
     ],
 
     sidebar: {
+      '/frontend/tips/': [
+        {
+          items: [
+            {
+              text: '发布订阅-不一样的设计模式',
+              link: '/frontend/tips/发布订阅-不一样的设计模式.md'
+            }
+          ]
+        }
+      ],
       '/Spring/': [
         {
           items: [
