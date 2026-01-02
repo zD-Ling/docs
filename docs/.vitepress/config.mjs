@@ -75,6 +75,10 @@ export default defineConfig({
             {
               text: '发布订阅-不一样的设计模式',
               link: '/frontend/tips/发布订阅-不一样的设计模式.md'
+            },
+            {
+              text: '自动检测版本更新',
+              link: '/frontend/tips/自动检测版本更新.md'
             }
           ]
         }
