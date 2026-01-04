@@ -77,8 +77,8 @@ export default defineConfig({
               link: '/frontend/tips/发布订阅-不一样的设计模式.md'
             },
             {
-              text: '自动检测版本更新',
-              link: '/frontend/tips/自动检测版本更新.md'
+              text: 'Web 应用的自动版本更新检测机制',
+              link: '/frontend/tips/Web 应用的自动版本更新检测机制.md'
             }
           ]
         }
@@ -91,7 +91,13 @@ export default defineConfig({
               items: [
                 {
                   text: 'Spring Security',
-                  link: '/Spring/Spring_Security.md'
+                  link: '/Spring/Spring_Security.md',
+                  items: [
+                    {
+                      text: 'AOP自定义注解的用户鉴权',
+                      link: '/Spring/AOP自定义注解的用户鉴权.md'
+                    }
+                  ]
                 }
               ]
             }

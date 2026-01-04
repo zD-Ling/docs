@@ -1021,6 +1021,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
             // 从声明中获取用户ID并转换为Long类型
             Long userId = Long.valueOf(claims.get("id").toString());
             // 根据用户ID从数据库查询用户拥有的菜单权限
+            // 此处可以优化为从缓存中获取，提高性能
             List<Menu> menuList = menuMapper.selectByUserId(userId);
             // 创建用户对象，用于构建Spring Security认证令牌
             User user = new User();
@@ -1201,7 +1202,7 @@ public class SecurityConfig {
 
 ### 测试方法
 
-``` java
+```java
 @RestController
 @RequestMapping("/test")
 public class TestController {
@@ -1222,4 +1223,3 @@ public class TestController {
 
 }
 ```
-
